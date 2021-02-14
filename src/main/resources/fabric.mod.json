@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "brokennametags",
+  "version": "${version}",
+  "name": "Brokennametags",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/brokennametags/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "bluefirephoenix.brokennametags.client.BrokennametagsClient"
+    ],
+    "main": [
+      "bluefirephoenix.brokennametags.Brokennametags"
+    ]
+  },
+  "mixins": [
+    "brokennametags.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
