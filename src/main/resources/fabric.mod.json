@@ -11,10 +11,10 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "bluefirephoenix.brokennametags.client.BrokennametagsClient"
+      "bluefirephoenix.brokennametags.client.BrokenNameTagsClient"
     ],
     "main": [
-      "bluefirephoenix.brokennametags.Brokennametags"
+      "bluefirephoenix.brokennametags.BrokenNameTags"
     ]
   },
   "mixins": [
