@@ -13,6 +13,6 @@ public class BrokenNameTags implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        Registry.register(Registry.ITEM, new Identifier("brokentags", "broken_nametag"),  BROKEN_NAMETAG);
+        Registry.register(Registry.ITEM, new Identifier("brokennametags", "broken_nametag"),  BROKEN_NAMETAG);
     }
 }

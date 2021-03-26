@@ -2,17 +2,19 @@
   "schemaVersion": 1,
   "id": "brokennametags",
   "version": "${version}",
-  "name": "Brokennametags",
-  "description": "",
-  "authors": [],
-  "contact": {},
+  "name": "Broken Name Tags",
+  "description": "Adds Broken Name Tags into Minecraft",
+  "authors": [
+    "bluefire_phoenix"
+  ],
+  "contact": {
+    "sources": "https://github.com/Bluefire123/BloosFabricMods/tree/main/BrokenNameTags",
+    "issues": "https://github.com/Bluefire123/BloosFabricMods/issues"
+  },
   "license": "MIT",
   "icon": "assets/brokennametags/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "bluefirephoenix.brokennametags.client.BrokenNameTagsClient"
-    ],
     "main": [
       "bluefirephoenix.brokennametags.BrokenNameTags"
     ]
