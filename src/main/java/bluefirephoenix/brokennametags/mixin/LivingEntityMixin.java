@@ -29,35 +29,24 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "onDeath", at = @At("HEAD"))
     public void onDeath(DamageSource source, CallbackInfo ci) {
-
         if (!this.removed && !this.dead) {
 
-            TameableEntity pet = null;
-
-            if (((LivingEntity) (Object) this) instanceof TameableEntity) {
-                pet = ((TameableEntity) (Object) this);
-            }
-
             // check if the entity has a custom name
-            if (hasCustomName() || (pet != null && pet.isTamed())) { // the order of this if statement matters
-
+            if (hasCustomName()) { // the order of this if statement matters
                 ItemStack tag = new ItemStack(BrokenNameTags.BROKEN_NAMETAG, 1);
-                BrokenNameTagItem item = (BrokenNameTagItem) tag.getItem();
                 CompoundTag nbt = new CompoundTag();
 
-                String name = getDefaultName().getString();
+                Text name = getDefaultName();
 
                 if (hasCustomName()) {
-                    name = getCustomName().getString();
+                    name = getCustomName();
                 }
 
                 if (source.getDeathMessage((LivingEntity) (Object) this) != null) {
-                    nbt.putString("deathMessage",source.getDeathMessage((LivingEntity) (Object) this).getString());
+                    nbt.putString("deathMessage", source.getDeathMessage((LivingEntity) (Object) this).getString());
                 }
-
-                tag.setCustomName(Text.of(name));
+                tag.setCustomName(name); // todo this is causing the crash
                 tag.putSubTag("data",nbt);
-
                 dropStack(tag);
             }
         }
