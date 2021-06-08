@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "brokennametags",
   "version": "${version}",
+
   "name": "Broken Name Tags",
   "description": "Adds Broken Name Tags into Minecraft",
   "authors": [
@@ -11,8 +12,10 @@
     "sources": "https://github.com/bloofirephoenix/BrokenNameTags",
     "issues": "https://github.com/bloofirephoenix/BrokenNameTags/issues"
   },
+
   "license": "MIT",
   "icon": "assets/brokennametags/icon.png",
+
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -22,9 +25,14 @@
   "mixins": [
     "brokennametags.mixins.json"
   ],
+
   "depends": {
-    "fabricloader": ">=0.11.1",
+    "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.16.5"
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }

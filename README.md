@@ -5,3 +5,5 @@ Broken Name Tags can be repaired by surrounding them with string in a crafting t
 
 ## Download
 [Curseforge](https://www.curseforge.com/minecraft/mc-mods/broken-name-tags)
+
+[Modrinth](https://modrinth.com/mod/broken-name-tags)
