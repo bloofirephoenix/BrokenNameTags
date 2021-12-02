@@ -17,8 +17,8 @@ public class BrokenNameTagItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (stack.getTag() != null) {
-            String deathMessage = stack.getTag().getCompound("data").getString("deathMessage");
+        if (stack.getNbt() != null) {
+            String deathMessage = stack.getNbt().getCompound("data").getString("deathMessage");
             tooltip.add(Text.of(Formatting.GRAY+deathMessage));
         }
     }

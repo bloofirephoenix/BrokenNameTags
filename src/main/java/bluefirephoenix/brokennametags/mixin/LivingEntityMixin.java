@@ -4,7 +4,9 @@ import bluefirephoenix.brokennametags.BrokenNameTags;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Tameable;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
@@ -30,7 +32,7 @@ public abstract class LivingEntityMixin extends Entity {
         if (!this.isRemoved() && !this.dead) {
 
             // check if the entity has a custom name
-            if (hasCustomName()) { // the order of this if statement matters
+            if (hasCustomName() || (this instanceof Tameable && ((Tameable) this).getOwner() != null)) { // the order of this if statement matters
                 ItemStack tag = new ItemStack(BrokenNameTags.BROKEN_NAMETAG, 1);
                 NbtCompound nbt = new NbtCompound();
 
@@ -44,7 +46,7 @@ public abstract class LivingEntityMixin extends Entity {
                     nbt.putString("deathMessage", source.getDeathMessage((LivingEntity) (Object) this).getString());
                 }
                 tag.setCustomName(name); // todo this is causing the crash
-                tag.putSubTag("data",nbt);
+                tag.getNbt().put("data",nbt);
                 dropStack(tag);
             }
         }
